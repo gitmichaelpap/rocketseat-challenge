@@ -1,0 +1,42 @@
+const { compare } = require("bcryptjs");
+const AppError = require("../utils/AppError");
+const knex = require("../database/knex");
+const authConfig = require("../configs/auth");
+const { sign } = require("jsonwebtoken");
+
+const Users = knex("users");
+
+class SessionsController {
+  // index - get
+  // show - get
+  // create - post
+  // update - put
+  // delete - delete
+
+  async create(request, response) {
+    const { email, password } = request.body;
+
+    const [user] = await Users.where({ email });
+
+    if (!user) {
+      throw new AppError("E-mail e/senha incorreta.", 401);
+    }
+
+    const passwordMatched = await compare(password, user.password);
+
+    if (!passwordMatched) {
+      throw new AppError("E-mail e/senha incorreta.", 401);
+    }
+
+    const { secret, expiresIn } = authConfig.jwt;
+
+    const token = sign({}, secret, {
+      subject: String(user.id),
+      expiresIn,
+    });
+
+    response.status(201).json({ user, token });
+  }
+}
+
+module.exports = SessionsController;
