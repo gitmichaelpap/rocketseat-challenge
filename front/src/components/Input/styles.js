@@ -18,7 +18,7 @@ export const ContainerInput = styled.div`
   display: flex;
   align-items: center;
 
-  background-color: ${({ theme }) => theme.COLORS.Dark_900};
+  background-color: ${({ theme }) => theme.COLORS.Dark_200};
   color: ${({ theme }) => theme.COLORS.Light_700};
 
   margin-bottom: 8px;

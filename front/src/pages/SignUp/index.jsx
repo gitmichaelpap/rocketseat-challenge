@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-import { Container, Form, Logo } from "./styles";
+import { Container, ContainerInputs, Form, Logo, Title } from "./styles";
 
 import Polygon from "@/assets/polygon.svg?react";
 import { Button } from "@/components/Button";
 import { Input } from "@/components/Input";
-import { api } from "@/service/api";
+import { api } from "@/services/api";
 
 const SignUp = () => {
   const [name, setName] = useState("");
@@ -43,34 +43,37 @@ const SignUp = () => {
           {"food explorer"}
         </Logo>
 
-        <Input
-          id={"nome"}
-          type={"text"}
-          label={"Nome"}
-          placeholder={"Exemplo: Maria da Silva"}
-          onChange={(e) => setName(e.target.value)}
-        />
-        <Input
-          id={"email"}
-          type={"text"}
-          label={"E-mail"}
-          placeholder={"Exemplo: exemplo@exemplo.com.br"}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <Input
-          id={"password"}
-          type={"password"}
-          label={"Senha"}
-          placeholder={"No mínimo 6 caracteres"}
-          onChange={(e) => setPassword(e.target.value)}
-        />
+        <ContainerInputs>
+          <Title>Crie sua conta</Title>
+          <Input
+            id={"nome"}
+            type={"text"}
+            label={"Nome"}
+            placeholder={"Exemplo: Maria da Silva"}
+            onChange={(e) => setName(e.target.value)}
+          />
+          <Input
+            id={"email"}
+            type={"text"}
+            label={"E-mail"}
+            placeholder={"Exemplo: exemplo@exemplo.com.br"}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <Input
+            id={"password"}
+            type={"password"}
+            label={"Senha"}
+            placeholder={"No mínimo 6 caracteres"}
+            onChange={(e) => setPassword(e.target.value)}
+          />
 
-        <Button
-          title={"Criar conta"}
-          onClick={handleSignUp}
-        />
+          <Button
+            title={"Criar conta"}
+            onClick={handleSignUp}
+          />
 
-        <Link to="/">Voltar para o login</Link>
+          <Link to="/">Voltar para o login</Link>
+        </ContainerInputs>
       </Form>
     </Container>
   );
