@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 import { Container, ContainerInputs, Form, Logo, Title } from "./styles";
 
-import Polygon from "@/assets/polygon.svg?react";
 import { Button } from "@/components/Button";
 import { Input } from "@/components/Input";
+import { Logo as ILogo } from "@/components/Logo";
 import { useAuth } from "@/hooks/auth";
 
 const SignIn = () => {
@@ -22,8 +22,7 @@ const SignIn = () => {
     <Container>
       <Form>
         <Logo>
-          <Polygon />
-          {"food explorer"}
+          <ILogo />
         </Logo>
 
         <ContainerInputs>

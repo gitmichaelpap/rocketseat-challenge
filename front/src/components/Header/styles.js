@@ -1,55 +1,81 @@
 import styled from "styled-components";
 
-export const Container = styled.header`
+export const HeaderContainer = styled.header`
   grid-area: header;
 
-  height: 105px;
+  height: 80px;
   width: 100%;
 
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-  border-bottom-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
+  background-color: ${({ theme }) => theme.COLORS.Dark_700};
+
+  text-align: center;
+`;
+
+export const Container = styled.div`
+  grid-area: header;
+
+  width: 100%;
+  padding: 0.6rem 3.2rem;
+  margin: 0 auto;
+  width: min(112rem, 100%);
+
+  background-color: ${({ theme }) => theme.COLORS.Dark_700};
 
   display: flex;
   justify-content: space-between;
-
-  padding: 0 80px;
+  align-items: center;
 `;
 
-export const Profile = styled.div`
+export const Search = styled.div`
+  color: ${({ theme }) => theme.COLORS.Light_100};
+  width: 95%;
+  padding: 0 1.6rem;
+
+  input {
+    border: 0;
+    border-radius: 0.3rem;
+
+    font-size: 1rem;
+    text-align: center;
+
+    color: ${({ theme }) => theme.COLORS.Light_100};
+    background-color: ${({ theme }) => theme.COLORS.Dark_1000};
+  }
+
+  input::placeholder {
+    opacity: 0.56;
+    color: ${({ theme }) => theme.COLORS.Light_100};
+  }
+`;
+
+export const Requests = styled.div`
   display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: space-evenly;
   align-items: center;
 
-  > img {
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-  }
+  margin-right: 1.6rem;
 
-  > div {
-    display: flex;
-    flex-direction: column;
-    margin-left: 16px;
-    line-height: 24px;
+  border: 0;
+  border-radius: 0.3rem;
 
-    span {
-      font-size: 14px;
-      color: ${({ theme }) => theme.COLORS.GRAY_100};
-    }
+  width: 12rem;
+  background-color: ${({ theme }) => theme.COLORS.Tints_Tomato_200};
 
-    strong {
-      font-size: 18px;
-      color: ${({ theme }) => theme.COLORS.WHITE};
-    }
+  padding: 1rem;
+
+  > svg {
+    background-color: ${({ theme }) => theme.COLORS.Tints_Tomato_200};
+    color: ${({ theme }) => theme.COLORS.Light_100};
+    font-size: 1.7rem;
   }
 `;
 
-export const Logout = styled.button`
-  border: none;
-  background: none;
-
+export const Logout = styled.div`
   > svg {
-    color: ${({ theme }) => theme.COLORS.GRAY_100};
-    font-size: 36px;
+    color: ${({ theme }) => theme.COLORS.Light_100};
+    font-size: 1.7rem;
   }
 `;

@@ -1,5 +1,7 @@
+import { Container } from "./styles";
+
 const Home = () => {
-  return <h1>Home</h1>;
+  return <Container>Home</Container>;
 };
 
 export default Home;

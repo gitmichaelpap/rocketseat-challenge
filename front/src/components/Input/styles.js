@@ -21,7 +21,6 @@ export const ContainerInput = styled.div`
   background-color: ${({ theme }) => theme.COLORS.Dark_200};
   color: ${({ theme }) => theme.COLORS.Light_700};
 
-  margin-bottom: 8px;
   border-radius: 10px;
 
   display: flex;

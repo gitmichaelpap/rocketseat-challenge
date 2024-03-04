@@ -1,25 +1,34 @@
-import { RiShutDownLine } from "react-icons/ri";
+import { FiLogOut } from "react-icons/fi";
+import { PiReceiptLight } from "react-icons/pi";
 
-import { Container, Logout, Profile } from "./styles";
+import { Input } from "../Input";
+import { Logo } from "../Logo";
+
+import { Container, HeaderContainer, Logout, Requests, Search } from "./styles";
 
 export const Header = () => {
   return (
-    <Container>
-      <Profile>
-        <img
-          src="https://github.com/rodrigorgtic.png"
-          alt="Foto do usuário"
-        />
+    <HeaderContainer>
+      <Container>
+        <Logo />
 
-        <div>
-          <span>Bem-vindo</span>
-          <strong>Rodrigo Gonçalves</strong>
-        </div>
-      </Profile>
+        <Search>
+          <Input
+            id="search"
+            type="text"
+            placeholder="Pesquise por pratos ou ingredientes"
+          />
+        </Search>
 
-      <Logout>
-        <RiShutDownLine />
-      </Logout>
-    </Container>
+        <Requests>
+          <PiReceiptLight />
+          Pedidos(0)
+        </Requests>
+
+        <Logout>
+          <FiLogOut />
+        </Logout>
+      </Container>
+    </HeaderContainer>
   );
 };
