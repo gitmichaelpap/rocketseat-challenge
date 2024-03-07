@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import { BREAKPOINTS } from "@/styles/breakpoints";
+
 export const HeaderContainer = styled.header`
   grid-area: header;
 
@@ -9,6 +11,10 @@ export const HeaderContainer = styled.header`
   background-color: ${({ theme }) => theme.COLORS.Dark_700};
 
   text-align: center;
+
+  @media (max-width: ${BREAKPOINTS.MD}) {
+    height: 40px;
+  }
 `;
 
 export const Container = styled.div`
@@ -24,6 +30,34 @@ export const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width: ${BREAKPOINTS.MD}) {
+    padding: 0;
+
+    .logo {
+      gap: 0.01rem;
+      font-size: 2rem;
+    }
+    .logo-svg {
+      height: 2rem;
+    }
+  }
+`;
+
+export const Menu = styled.button`
+  background: transparent;
+  border: none;
+  display: none;
+
+  > svg {
+    font-size: 2.5rem;
+    color: ${({ theme }) => theme.COLORS.Light_300};
+  }
+
+  @media (max-width: ${BREAKPOINTS.MD}) {
+    display: block;
+    width: auto;
+  }
 `;
 
 export const Search = styled.div`
@@ -46,9 +80,13 @@ export const Search = styled.div`
     opacity: 0.56;
     color: ${({ theme }) => theme.COLORS.Light_100};
   }
+
+  @media (max-width: ${BREAKPOINTS.MD}) {
+    display: none;
+  }
 `;
 
-export const Requests = styled.div`
+export const Requests = styled.button`
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -57,6 +95,7 @@ export const Requests = styled.div`
   align-items: center;
 
   margin-right: 1.6rem;
+  color: ${({ theme }) => theme.COLORS.Light_100};
 
   border: 0;
   border-radius: 0.3rem;
@@ -67,15 +106,38 @@ export const Requests = styled.div`
   padding: 1rem;
 
   > svg {
-    background-color: ${({ theme }) => theme.COLORS.Tints_Tomato_200};
+    background-color: transparent;
     color: ${({ theme }) => theme.COLORS.Light_100};
     font-size: 1.7rem;
   }
+
+  @media (max-width: ${BREAKPOINTS.MD}) {
+    width: auto;
+    background-color: transparent;
+    margin-right: 0;
+
+    > div {
+      display: none;
+    }
+
+    > svg {
+      background-color: transparent;
+      color: ${({ theme }) => theme.COLORS.Light_100};
+      font-size: 1.7rem;
+    }
+  }
 `;
 
-export const Logout = styled.div`
+export const Logout = styled.button`
+  background-color: transparent;
+  border: none;
+
   > svg {
     color: ${({ theme }) => theme.COLORS.Light_100};
     font-size: 1.7rem;
+  }
+
+  @media (max-width: ${BREAKPOINTS.MD}) {
+    display: none;
   }
 `;

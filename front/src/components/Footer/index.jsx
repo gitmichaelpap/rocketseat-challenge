@@ -1,15 +1,13 @@
 import { Logo } from "../Logo";
 
-import { Container, FooterContainer, LogoContainer } from "./styles";
+import { Container, FooterContainer } from "./styles";
 
 export const Footer = () => {
   return (
     <FooterContainer>
       <Container>
-        <LogoContainer>
-          <Logo />
-        </LogoContainer>
-        {"@ 2023 - Todos os direitos reservados"}
+        <Logo />
+        <div>{"@ 2023 - Todos os direitos reservados"}</div>
       </Container>
     </FooterContainer>
   );

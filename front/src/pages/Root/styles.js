@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import { BREAKPOINTS } from "@/styles/breakpoints";
+
 export const Container = styled.div`
   width: 100%;
   height: 100vh;
@@ -13,6 +15,10 @@ export const Container = styled.div`
     "footer footer";
 
   background-color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
+
+  @media (max-width: ${BREAKPOINTS.MD}) {
+    grid-template-rows: 40px auto 32px;
+  }
 `;
 
 export const Content = styled.div`

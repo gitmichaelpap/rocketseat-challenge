@@ -1,3 +1,4 @@
+import { BsList } from "react-icons/bs";
 import { FiLogOut } from "react-icons/fi";
 import { PiReceiptLight } from "react-icons/pi";
 import { useNavigate } from "react-router-dom";
@@ -5,7 +6,14 @@ import { useNavigate } from "react-router-dom";
 import { Input } from "../Input";
 import { Logo } from "../Logo";
 
-import { Container, HeaderContainer, Logout, Requests, Search } from "./styles";
+import {
+  Container,
+  HeaderContainer,
+  Logout,
+  Menu,
+  Requests,
+  Search,
+} from "./styles";
 
 import { useAuth } from "@/hooks/auth";
 
@@ -22,6 +30,9 @@ export const Header = () => {
   return (
     <HeaderContainer>
       <Container>
+        <Menu>
+          <BsList></BsList>
+        </Menu>
         <Logo />
 
         <Search>
@@ -34,7 +45,7 @@ export const Header = () => {
 
         <Requests>
           <PiReceiptLight />
-          Pedidos(0)
+          <div>Pedidos(0)</div>
         </Requests>
 
         <Logout onClick={handleSingOut}>
