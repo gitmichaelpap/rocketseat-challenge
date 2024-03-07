@@ -1,1 +1,14 @@
-{}
+{
+  "name": "challenge",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "npm-run-all --parallel dev:front dev:back",
+    "dev:front": "cd front && npm run dev",
+    "dev:back": "cd back && npm run dev"
+  },
+  "dependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}

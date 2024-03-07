@@ -15,7 +15,7 @@ const AuthProvider = ({ children }) => {
       localStorage.setItem("@challenge:user", JSON.stringify(user));
       localStorage.setItem("@challenge:token", token);
 
-      api.defaults.headers.authorization = `Bearer ${token}`;
+      api.defaults.headers.common["Authorization"] = `Bearer ${token}`;
 
       setData({ user, token });
     } catch (error) {
@@ -27,18 +27,31 @@ const AuthProvider = ({ children }) => {
     }
   }
 
+  async function signOut() {
+    localStorage.removeItem("@challenge:user");
+    localStorage.removeItem("@challenge:token");
+
+    setData();
+  }
+
   useEffect(() => {
     const token = localStorage.getItem("@challenge:token");
     const user = localStorage.getItem("@challenge:user");
 
     if (token && user) {
-      api.defaults.headers.authorization = `Bearer ${token}`;
+      api.defaults.headers.common["Authorization"] = `Bearer ${token}`;
       setData({ user: JSON.parse(user), token });
     }
   }, []);
 
   return (
-    <AuthContext.Provider value={{ signIn, user: data.user }}>
+    <AuthContext.Provider
+      value={{
+        signIn,
+        signOut,
+        user: data?.user,
+      }}
+    >
       {children}
     </AuthContext.Provider>
   );
