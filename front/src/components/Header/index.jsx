@@ -17,7 +17,7 @@ import {
 
 import { useAuth } from "@/hooks/auth";
 
-export const Header = () => {
+export const Header = ({ onOpenMenu }) => {
   const { signOut } = useAuth();
 
   const navigation = useNavigate();
@@ -30,7 +30,7 @@ export const Header = () => {
   return (
     <HeaderContainer>
       <Container>
-        <Menu>
+        <Menu onClick={onOpenMenu}>
           <BsList></BsList>
         </Menu>
         <Logo />

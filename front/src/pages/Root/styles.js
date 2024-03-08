@@ -5,19 +5,24 @@ import { BREAKPOINTS } from "@/styles/breakpoints";
 export const Container = styled.div`
   width: 100%;
   height: 100vh;
-
-  display: grid;
-  grid-template-columns: 250px auto;
-  grid-template-rows: 80px auto 64px;
-  grid-template-areas:
-    "header header"
-    "content content"
-    "footer footer";
-
   background-color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
 
+  display: grid;
+
+  grid-template-columns: auto;
+  grid-template-rows: 80px auto 64px;
+  grid-template-areas:
+    "header"
+    "content"
+    "footer ";
+
   @media (max-width: ${BREAKPOINTS.MD}) {
+    grid-template-columns: 0px auto;
     grid-template-rows: 40px auto 32px;
+    grid-template-areas:
+      "menu header"
+      "menu content"
+      "footer footer ";
   }
 `;
 
