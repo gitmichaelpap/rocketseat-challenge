@@ -5,7 +5,7 @@ import { BREAKPOINTS } from "@/styles/breakpoints";
 export const Container = styled.div`
   width: 100%;
   height: 100vh;
-  background-color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
+  background-color: ${({ theme }) => theme.COLORS.Dark_100};
 
   display: grid;
 
@@ -32,4 +32,8 @@ export const Content = styled.div`
   width: min(112rem, 100%);
   margin: 0 auto;
   overflow-y: auto;
+  background-color: ${({ theme }) => theme.COLORS.Dark_100};
+  @media (max-width: ${BREAKPOINTS.MD}) {
+    padding: 1.6rem 1.2rem;
+  }
 `;
