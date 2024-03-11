@@ -26,8 +26,9 @@ export const Container = styled.aside`
 
 export const Header = styled.header`
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   padding: 0.6rem 0.6rem;
+  gap: 1.5rem;
 `;
 
 export const Title = styled.h1`
@@ -42,7 +43,9 @@ export const Nav = styled.nav`
   display: flex;
   flex-direction: column;
   flex: 1;
+  gap: 0.7rem;
   height: 87vh;
+  padding-top: 1.5rem;
 
   background-color: ${({ theme }) => theme.COLORS.Dark_400};
 
@@ -54,6 +57,7 @@ export const Nav = styled.nav`
     padding-left: 1.5rem;
     height: 56px;
     font-size: 1.2rem;
+    border: 1px solid ${({ theme }) => theme.COLORS.Dark_900};
 
     &[data-menu-active="true"] {
       background-color: ${({ theme }) => theme.COLORS.Light_100};

@@ -1,6 +1,8 @@
 import { IoCloseOutline } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 
+import { Search } from "../Search";
+
 import { Button, Container, Header, Nav, Title } from "./styles";
 
 import { useAuth } from "@/hooks/auth";
@@ -18,15 +20,16 @@ export const SideMenu = ({ menuIsOpen, onCloseMenu }) => {
   return (
     <Container data-menu-is-open={menuIsOpen}>
       <Header>
-        <Title>{"Menu"}</Title>
         {menuIsOpen && (
           <Button onClick={onCloseMenu}>
             <IoCloseOutline />
           </Button>
         )}
+        <Title>{"Menu"}</Title>
       </Header>
 
       <Nav>
+        <Search />
         <a onClick={handleSingOut}>{"SAIR"}</a>
       </Nav>
     </Container>
