@@ -6,6 +6,7 @@ export const Container = styled.div`
   width: 100%;
   height: 100vh;
   background-color: ${({ theme }) => theme.COLORS.Dark_100};
+  overflow-y: auto;
 
   display: grid;
 

@@ -12,7 +12,7 @@ export const Banner = styled.div`
   width: 100%;
 
   height: 10rem;
-  margin-top: 4rem;
+  margin-top: 2rem;
   padding-right: 0.6rem;
 
   display: flex;
@@ -85,13 +85,42 @@ export const BodyBanner = styled.div`
 export const Body = styled.div`
   width: 100%;
   height: 100%;
-  background-color: ${({ theme }) => theme.COLORS.Dark_100};
+  margin-top: 0.2rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: flex-start;
+  justify-content: flex-start;
+  align-items: flex-start;
+`;
+
+export const Section = styled.div`
+  width: 100%;
+  height: 21rem;
+  min-height: 21rem;
+  padding: 0.3rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: flex-start;
+  justify-content: flex-start;
+  align-items: flex-start;
 `;
 
 export const TitleBody = styled.div`
-  background-color: ${({ theme }) => theme.COLORS.Dark_800};
+  font-weight: 700;
 `;
 
 export const BodyList = styled.div`
-  background-color: ${({ theme }) => theme.COLORS.Dark_1000};
+  width: 100%;
+  height: 100%;
+  padding-bottom: 0.7rem;
+  overflow-x: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
 `;

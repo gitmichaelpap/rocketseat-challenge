@@ -26,7 +26,21 @@ body {
     color: ${({ theme }) => theme.COLORS.Light_100};
     font-size: 1rem;
     outline: none;
+
     -webkit-font-smoothing: antialiased;
+
+    ::-webkit-scrollbar {
+        width: 0.5rem;
+        height: 0.4rem;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background:${({ theme }) => theme.COLORS.Light_700};
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background:${({ theme }) => theme.COLORS.Dark_1000};
+    }
 }
 
 a {
