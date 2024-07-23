@@ -1,5 +1,4 @@
 <h1 align="center" style="text-align: center;">
-  <img alt="Logo do Food Explorer" style="vertical-align: middle; margin-right: 10px;">
   Food Explorer
 </h1>
 
@@ -81,7 +80,7 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 - Styled Components
 - Swiper
 - ViteJS
-- 
+-
 - Bcrypt.js
 - CORS
 - Express.js
@@ -95,7 +94,7 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 
 <h2 id="usage">💡 Utilização</h2>
 
-Você também pode executá-la em sua máquina localmente. Certifique-se de ter o ``Node.js`` e o ``npm`` instalados antes de prosseguir com as etapas abaixo:
+Você também pode executá-la em sua máquina localmente. Certifique-se de ter o `Node.js` e o `npm` instalados antes de prosseguir com as etapas abaixo:
 
 1. Clone o projeto:
 
@@ -106,7 +105,8 @@ $ git clone https://github.com/gitmichaelpap/rocketseat-challenge
 2. Instale as dependências:
 
 Front:
-``` 
+
+```
 
 $ cd front
 $ npm install
@@ -114,7 +114,8 @@ $ npm install
 ```
 
 Back:
-``` 
+
+```
 
 $ cd back
 $ npm install
