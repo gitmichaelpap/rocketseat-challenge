@@ -1,8 +1,10 @@
 import { BsList } from "react-icons/bs";
 import { FiLogOut } from "react-icons/fi";
 import { PiReceiptLight } from "react-icons/pi";
+import { useMediaQuery } from "react-responsive";
 import { useNavigate } from "react-router-dom";
 
+import { Button } from "../Button";
 import { Logo } from "../Logo";
 import { Search } from "../Search";
 
@@ -18,9 +20,21 @@ import {
 import { useAuth } from "@/hooks/auth";
 
 export const Header = ({ onOpenMenu }) => {
-  const { signOut } = useAuth();
+  const { user, signOut } = useAuth();
 
-  const navigation = useNavigate();
+  const isAdmin = user.is_admin;
+
+  const isDesktop = useMediaQuery({ minWidth: 1024 });
+
+  const navigate = useNavigate();
+
+  function handleFavorites() {
+    navigate("/favorites");
+  }
+
+  function handleNew() {
+    navigate("/new");
+  }
 
   const handleSingOut = () => {
     signOut();
@@ -39,10 +53,28 @@ export const Header = ({ onOpenMenu }) => {
           <Search />
         </SearchContainer>
 
-        <Requests>
-          <PiReceiptLight />
-          <div>Pedidos(0)</div>
-        </Requests>
+        {isDesktop && (
+          <Button
+            className="favorites"
+            title="Meus favoritos"
+            onClick={handleFavorites}
+          />
+        )}
+
+        {isAdmin ? (
+          isDesktop && (
+            <Button
+              className="new"
+              title="Novo prato"
+              onClick={handleNew}
+            />
+          )
+        ) : (
+          <Requests>
+            <PiReceiptLight />
+            <div>Pedidos(0)</div>
+          </Requests>
+        )}
 
         <Logout onClick={handleSingOut}>
           <FiLogOut />

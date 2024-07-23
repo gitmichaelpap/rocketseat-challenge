@@ -12,6 +12,24 @@ export const HeaderContainer = styled.header`
 
   text-align: center;
 
+  .favorites {
+    padding: 0px;
+    margin: 0rem 0.5rem;
+    max-width: 8rem;
+    border: 0;
+    background: none;
+
+    line-height: 100%;
+
+    color: ${({ theme }) => theme.COLORS.Light_200};
+  }
+  .new,
+  .orders {
+    padding: 0px;
+    margin: 0rem 0.5rem;
+    max-width: 21.6rem;
+  }
+
   @media (max-width: ${BREAKPOINTS.MD}) {
     height: 40px;
   }
@@ -61,6 +79,8 @@ export const Menu = styled.button`
 `;
 
 export const SearchContainer = styled.div`
+  width: 100%;
+
   @media (max-width: ${BREAKPOINTS.MD}) {
     display: none;
   }

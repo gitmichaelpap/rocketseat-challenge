@@ -32,7 +32,7 @@ export const ContainerInput = styled.div`
     width: 100%;
 
     padding: 12px;
-    color: ${({ theme }) => theme.COLORS.Light_500};
+    color: ${({ theme }) => theme.COLORS.Light_200};
     background: transparent;
     border: 0;
 

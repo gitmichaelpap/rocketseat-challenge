@@ -1,3 +1,4 @@
+import jwtDecode from "jwt-decode";
 import { createContext, useContext, useEffect, useState } from "react";
 
 import { api } from "@/services/api";
@@ -7,10 +8,30 @@ export const AuthContext = createContext({});
 const AuthProvider = ({ children }) => {
   const [data, setData] = useState({});
 
+  function isUserAuthenticated() {
+    const user = localStorage.getItem("@challenge:user");
+
+    if (!user) {
+      return false;
+    }
+
+    const token = localStorage.getItem("@challenge:token");
+    const tokenExpiration = jwtDecode(token).exp;
+    const currentTime = Math.floor(Date.now() / 1000);
+
+    if (tokenExpiration < currentTime) {
+      return false;
+    }
+
+    return true;
+  }
+
   async function signIn({ email, password }) {
     try {
       const response = await api.post("/sessions", { email, password });
       const { user, token } = response.data;
+
+      user.is_admin = ["admin"].includes(user.role);
 
       localStorage.setItem("@challenge:user", JSON.stringify(user));
       localStorage.setItem("@challenge:token", token);
@@ -49,6 +70,7 @@ const AuthProvider = ({ children }) => {
       value={{
         signIn,
         signOut,
+        isUserAuthenticated,
         user: data?.user,
       }}
     >

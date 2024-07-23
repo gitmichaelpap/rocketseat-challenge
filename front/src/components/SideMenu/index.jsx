@@ -17,6 +17,10 @@ export const SideMenu = ({ menuIsOpen, onCloseMenu }) => {
     navigation("/");
   };
 
+  function handleFavorites() {
+    navigate("/favorites");
+  }
+
   return (
     <Container data-menu-is-open={menuIsOpen}>
       <Header>
@@ -30,6 +34,7 @@ export const SideMenu = ({ menuIsOpen, onCloseMenu }) => {
 
       <Nav>
         <Search />
+        <a onClick={handleFavorites}>{"FAVORITOS"}</a>
         <a onClick={handleSingOut}>{"SAIR"}</a>
       </Nav>
     </Container>

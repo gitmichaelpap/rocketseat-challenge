@@ -34,7 +34,7 @@ export const Banner = styled.div`
 export const SvgBanner = styled.div`
   display: flex;
   margin-left: -2rem;
-  margin-top: 2rem;
+  margin-top: 1rem;
 
   > svg {
     width: 20rem;

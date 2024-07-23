@@ -1,13 +1,12 @@
 import { Container } from "./styles";
 
-export const ButtonText = ({ title, isActive = false, ...rest }) => {
+export const ButtonText = ({ children, ...rest }) => {
   return (
     <Container
       type="button"
-      $isactive={isActive.toString()}
       {...rest}
     >
-      {title}
+      {children}
     </Container>
   );
 };

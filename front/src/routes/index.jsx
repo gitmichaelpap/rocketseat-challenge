@@ -6,12 +6,16 @@ import { AppRoutes } from "@/routes/app.routes";
 import { AuthRoutes } from "@/routes/auth.routes";
 
 export const Routes = () => {
-  const { user } = useAuth();
+  const { user, isUserAuthenticated } = useAuth();
+  const isAdmin = ["admin"].includes(user?.role);
+
+  const userAuthenticated = isUserAuthenticated();
+
   return (
     <BrowserRouter>
-      {user ? (
+      {user && userAuthenticated ? (
         <Root>
-          <AppRoutes />
+          <AppRoutes isAdmin={isAdmin} />
         </Root>
       ) : (
         <AuthRoutes />
