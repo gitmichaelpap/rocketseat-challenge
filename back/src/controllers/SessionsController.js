@@ -4,8 +4,6 @@ const knex = require("../database/knex");
 const authConfig = require("../configs/auth");
 const { sign } = require("jsonwebtoken");
 
-const Users = knex("users");
-
 class SessionsController {
   // index - get
   // show - get
@@ -16,7 +14,7 @@ class SessionsController {
   async create(request, response) {
     const { email, password } = request.body;
 
-    const [user] = await Users.where({ email });
+    const user = await knex("users").where({ email }).first();
 
     if (!user) {
       throw new AppError("E-mail e/senha incorreta.", 401);

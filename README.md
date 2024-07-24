@@ -22,7 +22,7 @@
 
 O projeto Food Explorer consiste no desafio final do programa Explorer da Rocketseat. Trata-se de uma aplicação de cardápio digital para um restaurante fictício.
 
-O front-end e back-end do projeto, está disponível neste repositório.
+O front-end [aqui](https://main--rocketseat-challenge-front.netlify.app/) e back-end [aqui](https://rocketseat-challenge-back.onrender.com) do projeto, está disponível neste repositório.
 
 <h2 id="pages">📃 Páginas</h2>
 
