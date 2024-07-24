@@ -24,6 +24,13 @@ O projeto Food Explorer consiste no desafio final do programa Explorer da Rocket
 
 O front-end [aqui](https://main--rocketseat-challenge-front.netlify.app/) e back-end [aqui](https://rocketseat-challenge-back.onrender.com) do projeto, está disponível neste repositório.
 
+<p align="center">
+  
+  <img src="https://main--rocketseat-challenge-front.netlify.app/">
+</p>
+
+
+
 <h2 id="pages">📃 Páginas</h2>
 
 A aplicação conta com as seguintes páginas:
