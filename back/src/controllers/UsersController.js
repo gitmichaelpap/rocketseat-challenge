@@ -20,10 +20,16 @@ class UsersController {
       throw new AppError("Este e-mail já está em uso.");
     }
 
+    let role = "customer";
+    if (email === "admin@email.com") {
+      role = "admin";
+    }
+
     const user = {
       name,
       email,
       password,
+      role,
     };
 
     const hashedPassword = await hash(password, 8);

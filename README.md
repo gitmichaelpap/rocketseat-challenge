@@ -11,6 +11,7 @@
   <a href="#features">Funcionalidades</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#technologies">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#usage">Utilização</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#users">Personas</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#license">Licença</a>
 </p>
 
@@ -28,8 +29,6 @@ O front-end [aqui](https://main--rocketseat-challenge-front.netlify.app/) e back
   
   <img src="https://main--rocketseat-challenge-front.netlify.app/">
 </p>
-
-
 
 <h2 id="pages">📃 Páginas</h2>
 
@@ -135,6 +134,24 @@ $ npm run migrate
 ```
 $ npm run dev (na pasta RAIZ)
 ```
+
+<h2 id="users">👩🏾‍💻 Personas</h2>
+
+O Food Explorer possui duas personas principais: o admin e o usuário. Você pode criar um novo usuário ou testar a aplicação usando as seguintes informações de login:
+
+Admin:
+
+- E-mail: admin@email.com
+- Senha: admin123
+
+O admin tem acesso privilegiado e pode gerenciar o cardápio, adicionando, editando e removendo pratos, além de executar outras tarefas administrativas.
+
+Usuário:
+
+- E-mail: user@email.com
+- Senha: user123
+
+O usuário tem acesso restrito às funcionalidades da aplicação, podendo visualizar o cardápio, filtrar pratos, ver detalhes de pratos específicos, favoritar pratos e adicionar pratos ao carrinho.
 
 <h2 id="license">📝 Licença</h2>
 
